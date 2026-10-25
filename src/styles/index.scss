@@ -3,24 +3,24 @@
 @keyframes minutes {
   from {
     transform: rotate(0deg);
-    transform-origin: center bottom;
+    transform-origin: bottom;
   }
 
   to {
     transform: rotate(360deg);
-    transform-origin: center bottom;
+    transform-origin: bottom;
   }
 }
 
 @keyframes seconds {
   from {
     transform: rotate(0deg);
-    transform-origin: center bottom;
+    transform-origin: bottom;
   }
 
   to {
     transform: rotate(360deg);
-    transform-origin: center bottom;
+    transform-origin: bottom;
   }
 }
 
@@ -34,12 +34,13 @@ body {
 
 .stopwatch {
   display: flex;
+  position: relative;
   height: $watch-size;
   width: $watch-size;
   border: 1vmin dotted #000;
   border-radius: 100%;
 
-  &__secund_hand {
+  &__secund-hand {
     position: absolute;
     width: $secunds-width;
     height: $secunds-length;
@@ -50,7 +51,7 @@ body {
     animation: seconds 60s linear infinite;
   }
 
-  &__minute_hand {
+  &__minute-hand {
     position: absolute;
     width: $minutes-width;
     height: $minutes-length;
@@ -71,11 +72,11 @@ body {
     margin-top: ($watch-size - $watch-center-d) / 2;
   }
 
-  &--speed-up &__minute_hand {
+  &--speed-up &__minute-hand {
     animation-duration: 600s;
   }
 
-  &--speed-up &__secund_hand {
+  &--speed-up &__secund-hand {
     animation-duration: 10s;
   }
 }
