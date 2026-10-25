@@ -3,24 +3,20 @@
 @keyframes minutes {
   from {
     transform: rotate(0deg);
-    transform-origin: bottom;
   }
 
   to {
     transform: rotate(360deg);
-    transform-origin: bottom;
   }
 }
 
 @keyframes seconds {
   from {
     transform: rotate(0deg);
-    transform-origin: bottom;
   }
 
   to {
     transform: rotate(360deg);
-    transform-origin: bottom;
   }
 }
 
@@ -40,25 +36,25 @@ body {
   border: 1vmin dotted #000;
   border-radius: 100%;
 
-  &__secund-hand {
+  &__second-hand {
     position: absolute;
-    width: $secunds-width;
-    height: $secunds-length;
-    background-color: $secunds-color;
-    margin-left: ($watch-size - $secunds-width) / 2;
-    margin-top: ($watch-size / 2 - $secunds-length);
-
+    transform-origin: bottom;
+    width: $seconds-width;
+    height: $seconds-length;
+    background-color: $seconds-color;
+    margin-left: ($watch-size - $seconds-width) / 2;
+    margin-top: ($watch-size / 2 - $seconds-length);
     animation: seconds 60s linear infinite;
   }
 
   &__minute-hand {
     position: absolute;
+    transform-origin: bottom;
     width: $minutes-width;
     height: $minutes-length;
     background-color: $minutes-color;
     margin-left: ($watch-size - $minutes-width) / 2;
     margin-top: ($watch-size / 2 - $minutes-length);
-
     animation: minutes 3600s steps(60, end) infinite;
   }
 
